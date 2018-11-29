@@ -1,0 +1,61 @@
+
+
+
+Pre-chek:
+
+for i in `cat  cmixusr-dmgr-hosts`; do echo  "Hostname :$i";  ssh -q -o StrictHostKeyChecking=no "$i" 'ps -ef|grep -v root';echo; sleep 2s;  done
+
+for i in `cat  6thbacth`; do echo  "Hostname :$i";  ssh -q -o StrictHostKeyChecking=no "$i" 'cat /etc/fstsb';  done
+for i in `cat  upload-download-hosts-100118`; do echo  "Hostname :$i";  ssh -q -o StrictHostKeyChecking=no "$i" 'df -Ph' ;  done
+
+
+Post-work:
+for i in `cat  cmixusr-dmgr-hosts`; do echo  "Hostname :$i";  ssh -q -o StrictHostKeyChecking=no "$i" 'cat /etc/system-profile | grep -i version';  done
+for i in `cat  cmixusr-dmgr-hosts`; do echo  "Hostname :$i";  ssh -q -o StrictHostKeyChecking=no "$i" 'mount -a';  done
+for i in `cat  cmixusr-dmgr-hosts`; do echo  "Hostname :$i";  ssh -q -o StrictHostKeyChecking=no "$i" 'uptime';  done
+for i in `cat  cmixusr-dmgr-hosts`; do echo  "Hostname :$i";  ssh -q -o StrictHostKeyChecking=no "$i" 'cat /etc/redhat-release'; done
+
+
+odtJ9rHxp"
+
+
+for i in `cat 6thdechosts`;do echo -n -e "Hostname :$i\t"; sudo -u sa-priv ssh -q -o StrictHostKeyChecking=no "$i" ' cat /etc/system-profile | grep -i version ';done
+
+
+for i in `cat 6thdechosts`;do echo -n -e "Hostname :$i\t"; sudo -u sa-priv ssh -q -o StrictHostKeyChecking=no "$i" ' mount -a ';done
+
+for i in `cat 6thdechosts`;do echo -n -e "Hostname :$i\t"; sudo -u sa-priv ssh -q -o StrictHostKeyChecking=no "$i" ' cat /etc/system-profile | grep -i version ';done
+
+for i in `cat 6thdechosts`;do echo -n -e "Hostname :$i\t"; sudo -u sa-priv ssh -q -o StrictHostKeyChecking=no "$i" ' cat /etc/redhat-release ';done
+
+2018-01-10 19:14:40,315 - [os upgrade] - INFO - OS Upgrade restore marker file created successfully
+2018-01-10 19:14:40,330 - [os upgrade] - INFO - cmixapp-prod3-119 is managed by vca-rtp-003-p.cisco.com
+2018-01-10 19:14:40,426 - [os upgrade] - INFO - Initiated graceful powered off, wait...
+2018-01-10 19:14:50,485 - [os upgrade] - INFO - VM still powering off, sleeping for 10 more seconds
+2018-01-10 19:15:00,513 - [os upgrade] - INFO - VM still powering off, sleeping for 10 more seconds
+2018-01-10 19:15:10,555 - [os upgrade] - INFO - VM still powering off, sleeping for 10 more seconds
+2018-01-10 19:15:20,573 - [os upgrade] - INFO - VM still powering off, sleeping for 10 more seconds
+2018-01-10 19:15:30,591 - [os upgrade] - INFO - VM still powering off, sleeping for 10 more seconds
+2018-01-10 19:15:40,614 - [os upgrade] - INFO - VM still powering off, sleeping for 10 more seconds
+2018-01-10 19:15:50,665 - [os upgrade] - INFO - VM still powering off, sleeping for 10 more seconds
+2018-01-10 19:16:00,685 - [os upgrade] - INFO - Successfully powered off
+2018-01-10 19:16:03,583 - [os upgrade] - INFO - rename process completed successfully from cmixapp-prod3-119 to cmixapp-prod3-119-oldos
+2018-01-10 19:16:03,597 - [os upgrade] - INFO - cmixapp-prod3-119-newos is managed by vca-rtp-003-p.cisco.com
+2018-01-10 19:16:03,718 - [os upgrade] - INFO - Initiated graceful powered off, wait...
+2018-01-10 19:16:13,748 - [os upgrade] - INFO - VM still powering off, sleeping for 10 more seconds
+2018-01-10 19:16:23,770 - [os upgrade] - INFO - VM still powering off, sleeping for 10 more seconds
+2018-01-10 19:16:33,791 - [os upgrade] - INFO - VM still powering off, sleeping for 10 more seconds
+2018-01-10 19:16:43,810 - [os upgrade] - INFO - VM still powering off, sleeping for 10 more seconds
+2018-01-10 19:16:53,849 - [os upgrade] - INFO - Successfully powered off
+2018-01-10 19:16:53,849 - [os upgrade] - INFO - datastore migration process started for cmixapp-prod3-119 to datastore:RTP-OS-UPGRADE-SODC
+2018-01-10 19:16:53,849 - [os upgrade] - INFO - svmotion process started
+2018-01-10 19:19:18,110 - [os upgrade] - INFO - cmixapp-prod3-119 (Virtual Machine) moved to destination datastore
+2018-01-10 19:19:18,110 - [os upgrade] - INFO - SVMotion return value: True
+2018-01-10 19:19:18,111 - [os upgrade] - INFO - virtual machine unregister and register process started
+Traceback (most recent call last):
+  File "test_osupgrade_execution.py", line 26, in <module>
+    osupgrade_execution(source_vm_name, os_version)
+  File "/usr/lib/python2.7/site-packages/compute_ops-0.1.0-py2.7.egg/os_upgrade/execution_cr_tasks.py", line 132, in osupgrade_execution
+    target_vm_connection.unregister_register(old_source_vm, vcenter_name, source_esx_info)
+
+                          
